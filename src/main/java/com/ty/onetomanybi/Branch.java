@@ -1,6 +1,7 @@
 package com.ty.onetomanybi;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,7 +16,7 @@ public class Branch {
 	private String name;
 	private String address;
 	private long phone;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "my_hospital_id")
 	private Hospital hospital;
 
